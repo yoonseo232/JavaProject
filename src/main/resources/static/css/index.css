@@ -1,0 +1,39 @@
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+    font-size: 7rem;
+}
+
+.startButton, .loadButton, .loginButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.1em solid #000000; 
+    border-radius: 0.4em;
+}
+
+.startButton, .loadButton{
+    font-size: 2rem;
+    width: 10em;
+    height: 3em;
+}
+
+.startButton{
+    margin: auto;
+    margin-top: 10%;
+}
+
+.loadButton{
+    margin: auto;
+    margin-top: 1%;
+}
+
+.loginButton{
+    font-size: 1.5rem;
+    margin-left: 86%;
+    margin-top: 0%;
+    width: 7em;
+    height: 3em;
+}

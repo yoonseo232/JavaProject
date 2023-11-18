@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>널 만나러</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/stage.css">
+    <style>
+        body{
+            background-image: url("images/미술관3.png");
+        }   
+
+        .hitBox{
+            width: 57vh;
+            height: 100vh;
+            top: 10vh;
+            left: 60vh;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="hitBox" onclick="clickHitBox()"></div>
+    <img src="images/menu.png" class="menuBtn" onclick="clickMenuBtn()">
+    <div class="leftArrow" onclick="clickLeftArrow()"></div>
+    <div class="rightArrow" onclick="clickRightArrow()"></div>
+    <div class="menu">
+        <input type="button" value="SAVE" class="saveBtn inMenu">
+        <input type="button" value="LOAD" class="loadBtn inMenu">
+        <input type="button" value="SETTING" class="settingBtn inMenu">
+        <input type="button" value="HOME" class="homeBtn inMenu" onclick="clickHomeBtn()">
+    </div>
+    <img src="images/Xbtn.png" class="menuXBtn" onclick="clickXBtn()">
+    <div class="itemBar">
+        <div class="itemTxt">ITEMS</div>
+        <div class="item-1"></div>
+        <div class="item-2"></div>
+        <div class="item-3"></div>
+        <div class="item-4"></div>
+        <div class="item-5"></div>
+    </div>
+    <script src="js/stage.js"></script>
+    <script>
+        function clickLeftArrow(){
+            window.location.href = "stage1-2.html";
+        }
+
+        function clickRightArrow(){
+            window.location.href = "stage1-1.html";
+        }
+
+        function clickHitBox(){
+            window.location.href = "stage1-3(2).html";
+        }
+    </script>
+</body>
+</html>

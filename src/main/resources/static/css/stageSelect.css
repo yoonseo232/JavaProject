@@ -1,0 +1,11 @@
+.container{
+    margin-left: 45vw;
+    margin-top: 7vw;
+    font-size: 2rem;
+}
+.backButton{
+    font-size: 2rem;
+    background-color: transparent;
+    border: 0;
+    margin: 2%;
+}
