@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>너를 만나러</title>
+    <link rel="stylesheet" href="css/all.css">
+    <style>
+        .txt {
+            display: flex;
+            justify-content: center;
+            margin-top: 30vh;
+            font-size: 4rem;
+        }
+
+        .txt2{
+            display: flex;
+            justify-content: center;
+            margin-top: 2vh;
+            font-size: 3rem;
+        }
+
+        input {
+            font-size: 2rem;
+            width: 5em;
+            height: 1.5em;
+            border: 0.1em solid #000000;
+            border-radius: 0.4em;
+            margin-left: 110vh;
+            margin-top: 8vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="txt" id="stopwatchDisplay">탈출 성공!</div>
+    <div class="txt2" id="totalTimeDisplay"></div>
+    <input type="button" value="다음 ->" onclick="clickBtn()">
+    
+    <script>
+        var startTime = localStorage.getItem('stopwatchStartTime');
+
+        if (startTime) {
+            var currentTime = new Date().getTime();
+            var elapsedTime = currentTime - startTime;
+
+            var hours = Math.floor(elapsedTime / 3600000);
+            var minutes = Math.floor((elapsedTime % 3600000) / 60000);
+            var seconds = Math.floor((elapsedTime % 60000) / 1000);
+
+            hours = (hours < 10) ? '0' + hours : hours;
+            minutes = (minutes < 10) ? '0' + minutes : minutes;
+            seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+            var totalTimeDisplay = '총 흐른 시간 : ' + hours + ':' + minutes + ':' + seconds;
+            
+            document.getElementById('totalTimeDisplay').innerText = totalTimeDisplay;
+        }
+
+        function clickBtn() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

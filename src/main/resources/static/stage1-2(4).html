@@ -8,23 +8,20 @@
     <link rel="stylesheet" href="css/stage.css">
     <style>
         body{
-            background-image: url("images/미술관2.png");
+            background-image: url("images/미술관2-4.png");
         }   
 
-        .safe{
-            width: 20vh;
-            top: 45vh;
-            left: 100vh;
+        .key{
+            width: 60vh;
+            top: 50vh;
+            left: 75vh;
             position: absolute;
             z-index: 100;
         }
 
-        .graffiti{
-            width: 5vh;
-            top: 40vh;
-            left: 50vh;
-            position: absolute;
-            z-index: 100;
+        .itemKey{
+            margin-top: 3vh;
+            width: 20vh;
         }
     </style>
 </head>
@@ -38,8 +35,7 @@
         <button onclick="closeMemoPopup()">닫기</button>
     </div>
     <img src="images/menu.png" class="menuBtn" onclick="clickMenuBtn()">
-    <div class="leftArrow" onclick="clickLeftArrow()"></div>
-    <div class="rightArrow" onclick="clickRightArrow()"></div>
+    <div class="backArrow" onclick="clickBackArrow()"></div>
     <div class="menu">
         <input type="button" value="SAVE" class="saveBtn inMenu">
         <input type="button" value="LOAD" class="loadBtn inMenu">
@@ -55,26 +51,13 @@
         <div class="item-4"></div>
         <div class="item-5"></div>
     </div>
+    <img src="images/key.png" class="key" onclick="clickKey()">
     <script src="js/stage.js"></script>
-    <img src="images/금고.png" class="safe" onclick="clickSafe()">
-    <img src="images/graffiti.png" class="graffiti" onclick="clickGraffiti()">
     <script>
-        function clickLeftArrow(){
-            window.location.href = "stage1-1.html";
+        function clickBackArrow(){
+            window.location.href = "stage1-2.html";
         }
-
-        function clickRightArrow(){
-            window.location.href = "stage1-3.html";
-        }
-
-        function clickSafe(){
-            window.location.href = "stage1-2(2).html";
-        }
-
-        function clickGraffiti(){
-            window.location.href = "stage1-2(3).html";
-        }
-
+        
         window.onload = function () {
             var savedState = localStorage.getItem('keyState');
             if (savedState === 'hidden') {
@@ -87,6 +70,7 @@
                 itemKey.style.display = 'block';
             }
         };
+
     </script>
 </body>
 </html>

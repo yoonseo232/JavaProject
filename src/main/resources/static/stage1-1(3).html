@@ -14,6 +14,14 @@
     </style>
 </head>
 <body>
+    <div id="stopwatch">00:00:00</div>
+    <input type="button" value="메모" class="memo" onclick="clickMemo()">
+    <div id="memoPopup" class="memo-popup ">
+        <textarea id="memoText"></textarea>
+        <br>
+        <button onclick="saveMemo()">저장</button>
+        <button onclick="closeMemoPopup()">닫기</button>
+    </div>
     <img src="images/menu.png" class="menuBtn" onclick="clickMenuBtn()">
     <div class="backArrow" onclick="clickBackArrow()"></div>
     <div class="menu">
@@ -25,7 +33,7 @@
     <img src="images/Xbtn.png" class="menuXBtn" onclick="clickXBtn()">
     <div class="itemBar">
         <div class="itemTxt">ITEMS</div>
-        <div class="item-1"></div>
+        <div class="item-1"><img src="images/key.png" class="itemKey"></div>
         <div class="item-2"></div>
         <div class="item-3"></div>
         <div class="item-4"></div>
@@ -37,6 +45,20 @@
         function clickBackArrow(){
             window.location.href = "stage1-1.html";
         }
+
+        
+        window.onload = function () {
+            var savedState = localStorage.getItem('keyState');
+            if (savedState === 'hidden') {
+                var key = document.querySelector('.key');
+                if (key) {
+                    key.style.display = 'none';
+                }
+
+                var itemKey = document.querySelectorAll('.itemKey')[0];
+                itemKey.style.display = 'block';
+            }
+        };
     </script>
 </body>
 </html>

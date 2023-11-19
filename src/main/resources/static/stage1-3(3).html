@@ -11,9 +11,24 @@
             background-image: url("images/미술관3-2.png");
         }   
         
+        .hitBox{
+            width: 50vh;
+            height: 100vh;
+            left: 80vh;
+            top: 5vh;
+            position: absolute;
+        }
     </style>
 </head>
 <body>
+    <div id="stopwatch">00:00:00</div>
+    <input type="button" value="메모" class="memo" onclick="clickMemo()">
+    <div id="memoPopup" class="memo-popup ">
+        <textarea id="memoText"></textarea>
+        <br>
+        <button onclick="saveMemo()">저장</button>
+        <button onclick="closeMemoPopup()">닫기</button>
+    </div>
     <img src="images/menu.png" class="menuBtn" onclick="clickMenuBtn()">
     <div class="backArrow" onclick="clickBackArrow()"></div>
     <div class="menu">
@@ -25,17 +40,35 @@
     <img src="images/Xbtn.png" class="menuXBtn" onclick="clickXBtn()">
     <div class="itemBar">
         <div class="itemTxt">ITEMS</div>
-        <div class="item-1"></div>
+        <div class="item-1" onclick="clickKey()"><img src="images/key.png" class="itemKey"></div>
         <div class="item-2"></div>
         <div class="item-3"></div>
         <div class="item-4"></div>
         <div class="item-5"></div>
     </div>
-
+    <div class="hitBox"></div>
     <script src="js/stage.js"></script>
     <script>
         function clickBackArrow(){
             window.location.href = "stage1-3(2).html";
+        }
+
+        
+        window.onload = function () {
+            var savedState = localStorage.getItem('keyState');
+            if (savedState === 'hidden') {
+                var key = document.querySelector('.key');
+                if (key) {
+                    key.style.display = 'none';
+                }
+
+                var itemKey = document.querySelectorAll('.itemKey')[0];
+                itemKey.style.display = 'block';
+            }
+        };
+
+        function clickKey(){
+            window.location.href = "stage1-4.html"
         }
     </script>
 </body>
